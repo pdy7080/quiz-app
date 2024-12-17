@@ -1,0 +1,36 @@
+해당 오류는 moviepy가 설치는 되어있지만 제대로 작동하지 않는 것 같습니다. 전체 가상환경을 새로 만들어서 시도해보겠습니다.
+
+1. 현재 가상환경 비활성화:
+```bash
+deactivate
+```
+
+2. 기존 venv 폴더 삭제:
+```bash
+rmdir /s /q venv
+```
+
+3. 새 가상환경 생성 및 활성화:
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
+
+4. 필요한 패키지들 순서대로 설치:
+```bash
+pip install --upgrade pip
+pip install moviepy==1.0.3
+pip install anthropic
+pip install python-dotenv
+pip install opencv-python
+pip install numpy
+pip install google-auth-oauthlib
+pip install google-api-python-client
+```
+
+5. 설치 확인:
+```bash
+pip list
+```
+
+이렇게 하고 다시 `python main.py`를 실행해보세요. 가상환경을 완전히 새로 만들면 패키지 충돌 문제를 해결할 수 있습니다.
